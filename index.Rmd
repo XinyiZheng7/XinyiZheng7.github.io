@@ -1,0 +1,42 @@
+---
+title: "Xinyi's first website"
+author: "xinyi zheng"
+date: "2023-10-30"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+I try to add some text here
+
+# This is Xinyi's first website
+
+![](https://cdn.britannica.com/92/6792-004-C757C6D7/The-Birth-of-Venus-canvas-Sandro-Botticelli.jpg)
+
+## Here's a subsection
+And here's some additional text...
+
+```{r}
+rnorm(10)
+```
+
+## Links to other websites
+
+Let's link to useful tools for data science:
+
+* [Google](https://www.google.com/)
+* [P8105](https://p8105.com)
+
+## Local image
+
+Here's my favorite anime character: jack and glen
+
+![](image/yyye.png)
+
+## Link to page within the site
+
+[another page](index.html)
+
+

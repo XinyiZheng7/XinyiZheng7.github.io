@@ -1,0 +1,12 @@
+---
+title: "My another page"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# This is Xinyi's another page
+
+![](image/rev.png)
