@@ -42,28 +42,28 @@ ny_noaa <- ny_noaa %>%
   sample_n(1000)
 
 ny_noaa <- ny_noaa %>%
-  filter(!is.na(prcp), !is.na(snow))
+  filter(!is.na(prcp), !is.na(snow), !is.na(tmax), !is.na(tmin))
 ```
 
-## Scatter Plot
+## Scatter Plot (Date and Snowfall)
 ```{r}
-plot_ly(data = ny_noaa, 
-        x = ~tmax, 
-        y = ~tmin, 
-        type = "scatter", 
-        mode = "markers",
-        color = ~id, 
-        marker = list(size = 10, opacity = 0.6))
+ny_noaa$date <- as.Date(ny_noaa$date, format = "%Y-%m-%d")
+
+plot_ly(ny_noaa, x = ~date, y = ~snow, type = "scatter", mode = "markers") %>%
+  layout(title = "Date vs. Snowfall",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Snowfall (snow)"))
 ```
 
-## Boxplot
+## Barchart (Date and Precipitation)
 ```{r}
-ny_noaa %>%
-  mutate(date = as.factor(date)) %>% 
-  plot_ly(x = ~tmax, color = ~id, type = "box", colors = "viridis")
+agg_data <- aggregate(ny_noaa$prcp ~ format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y"), FUN=sum)
+
+plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y"), values = ~ny_noaa$prcp, type = 'pie') %>%
+  layout(title = 'Total Precipitation per Year')
 ```
 
-## Bar Chart
+## Bar Chart (tmax and tmin)
 ```{r}
 plot_ly(data = ny_noaa, x = ~tmax, y = ~tmin, type = 'bar', colors = 'viridis') %>%
   layout(title = "Bar Chart of Dates", xaxis = list(title = "tmax"), yaxis = list(title = "Count"))
