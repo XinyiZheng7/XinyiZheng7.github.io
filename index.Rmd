@@ -69,7 +69,7 @@ plot_ly(data = ny_noaa, x = ~tmax, y = ~tmin, type = 'bar', colors = 'viridis') 
   layout(title = "Bar Chart of Dates", xaxis = list(title = "tmax"), yaxis = list(title = "Count"))
 ```
 
-# Link to page within the site, which tells my academic and professional experience
+# My academic and professional experience
 
 * [About me](about.html)
 
