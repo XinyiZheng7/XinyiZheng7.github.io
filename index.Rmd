@@ -8,12 +8,22 @@ output:
     toc_float: true
     theme: cosmo
 ---
-# Some text and picture
-Hello, I am Xinyi. This is my first website. My UNI is xz3298. 
+# introduction
+Hello, I am Xinyi. This is my first website. 
+My UNI is xz3298. 
 
-I draw three plots using the dataset NY NOAA. 
+My email: xz3298@cumc.columbia.edu
 
-Also, I give a brief introduction of my academic and professional experience.
+My github account is [XinyiZheng77](https://github.com/XinyiZheng7)
+
+I major in [Environmental Health Data Science](https://www.publichealth.columbia.edu/academics/degrees/master-science/environmental-health-data-science)
+
+Also, I give a brief introduction of my academic and professional experience in the below 
+
+# My academic and professional experience
+
+* [About me](about.html)
+
 
 I don’t know what to say first, but I need to leave some text and pictures here, so I leave a poem:
 
@@ -73,9 +83,9 @@ plot_ly(data = ny_noaa, x = ~tmax, y = ~tmin, type = 'bar', colors = 'viridis') 
   layout(title = "Bar Chart of Dates", xaxis = list(title = "tmax"), yaxis = list(title = "Count"))
 ```
 
-# My academic and professional experience
 
-* [About me](about.html)
+
+
 
 
 
