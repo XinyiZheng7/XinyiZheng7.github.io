@@ -63,10 +63,12 @@ ny_noaa %>%
 
 ## Bar Chart
 ```{r}
-ny_noaa %>%
-  count(date) %>%
-  mutate(date = fct_reorder(date, n)) %>%
-  plot_ly(x = ~date, y = ~n, color = ~date, type = "bar", colors = "viridis")
+ny_noaa_count <- ny_noaa %>%
+  group_by(date) %>%
+  summarize(n = n())
+
+plot_ly(data = ny_noaa_count, x = ~date, y = ~n, type = 'bar', colors = 'viridis') %>%
+  layout(title = "Bar Chart of Dates", xaxis = list(title = "Date"), yaxis = list(title = "Count"))
 ```
 
 # Link to page within the site, which tells my academic and professional experience
