@@ -1,5 +1,5 @@
 ---
-title: "My another page"
+title: "About me"
 output: 
   html_document:
     toc: true
@@ -7,7 +7,7 @@ output:
     theme: cosmo
 ---
 
-# About me
+# Brief introduction of me
 My name is Xinyi Zheng, I come from Nanjing in China. I love composing and writing. 
 
 My email is xz3298@cumc.columbia.edu
@@ -25,4 +25,8 @@ I get my bachelor degree in Hohai University in China. I used to learn Marine Sc
 ### Professional experience
 
 I do not have actual work experience. But I am a music producer and a composer. I also write novels and poems.
+
+Here's some of my songs:
+* [It was him](https://www.bilibili.com/video/BV1ug411o7Hq/?spm_id_from=333.337.search-card.all.click&vd_source=eae4882d62ae72f27db3f5c74a44c1f5)
+* [After your death](https://www.bilibili.com/video/BV12d4y1f7PC/?spm_id_from=333.337.search-card.all.click&vd_source=eae4882d62ae72f27db3f5c74a44c1f5)
 

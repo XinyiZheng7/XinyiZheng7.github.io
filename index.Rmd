@@ -25,6 +25,10 @@ Yet dreams of splendor past, behind you lay.
 
 ## Here's three plots: Instacart, NY NOAA, NYC Restaurant Inspections{.tabsets}
 click on the tab to see details
+```{r}
+library(plotly)
+library(ggplot2)
+```
 
 ### Instacart
 
