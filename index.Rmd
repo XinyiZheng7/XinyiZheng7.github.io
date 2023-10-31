@@ -9,8 +9,13 @@ output:
     theme: cosmo
 ---
 # Some text and picture
-Hello, I am Xinyi. This is my first website. My UNI is xz3298. I draw three plots using the dataset NY NOAA. Also, I give a brief introduction of my academic and professional experience.
-I don’t know what to say, but I need to leave some text and pictures here, so I leave a poem:
+Hello, I am Xinyi. This is my first website. My UNI is xz3298. 
+
+I draw three plots using the dataset NY NOAA. 
+
+Also, I give a brief introduction of my academic and professional experience.
+
+I don’t know what to say first, but I need to leave some text and pictures here, so I leave a poem:
 
 
 My steadfast lover, true, with no regret's sound,
@@ -20,8 +25,6 @@ Hear my whisper soft as your eyes lead the way—
 Ahead, dark thorns and mires do abound,
 
 Yet dreams of splendor past, behind you lay.
-
-![](image/yyye.png)
 
 # Here are three plots
 ## First, load necessary packages:
