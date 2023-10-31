@@ -31,6 +31,7 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 library(tidyverse)
+library(rnoaa)
 ```
 ## Importing and cleaning the dataset:
 ```{r}
@@ -42,33 +43,30 @@ ny_noaa <- ny_noaa %>%
 
 ny_noaa <- ny_noaa %>%
   filter(!is.na(prcp), !is.na(snow))
-
 ```
 
 ## Scatter Plot
 ```{r}
-ny_noaa %>%
-  mutate(text_label = str_c("Date: ", date, "\nPrecipitation: ", prcp)) %>% 
-  plot_ly(
-    x = ~date, y = ~prcp, type = "scatter", mode = "markers",
-    color = ~prcp, text = ~text_label, alpha = 0.5)
+plot_ly(data = ny_noaa, 
+        x = ~tmax, 
+        y = ~tmin, 
+        type = "scatter", 
+        mode = "markers",
+        color = ~id, 
+        marker = list(size = 10, opacity = 0.6))
 ```
 
 ## Boxplot
 ```{r}
 ny_noaa %>%
   mutate(date = as.factor(date)) %>% 
-  plot_ly(y = ~snow, color = ~date, type = "box", colors = "viridis")
+  plot_ly(x = ~tmax, color = ~id, type = "box", colors = "viridis")
 ```
 
 ## Bar Chart
 ```{r}
-ny_noaa_count <- ny_noaa %>%
-  group_by(date) %>%
-  summarize(n = n())
-
-plot_ly(data = ny_noaa_count, x = ~date, y = ~n, type = 'bar', colors = 'viridis') %>%
-  layout(title = "Bar Chart of Dates", xaxis = list(title = "Date"), yaxis = list(title = "Count"))
+plot_ly(data = ny_noaa, x = ~tmax, y = ~tmin, type = 'bar', colors = 'viridis') %>%
+  layout(title = "Bar Chart of Dates", xaxis = list(title = "tmax"), yaxis = list(title = "Count"))
 ```
 
 # Link to page within the site, which tells my academic and professional experience
