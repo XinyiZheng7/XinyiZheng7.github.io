@@ -39,16 +39,9 @@ click on the tab to see details
 (plot)
 
 
-## Links to other websites
-
-Let's link to useful tools for data science:
-
-* [Google](https://www.google.com/)
-* [P8105](https://p8105.com)
-
 ## Link to page within the site, which tells my academic and professional experience
 
-[another page](about.html)
+* [About me](about.html)
 
 
 
