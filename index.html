@@ -370,30 +370,21 @@ class="section level2 tabsets">
 <h2 class="tabsets">Here’s three plots: Instacart, NY NOAA, NYC
 Restaurant Inspections</h2>
 <p>click on the tab to see details</p>
-<pre class="r"><code>library(plotly)</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## 
-## Attaching package: &#39;plotly&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     last_plot</code></pre>
-<pre><code>## The following object is masked from &#39;package:stats&#39;:
-## 
-##     filter</code></pre>
-<pre><code>## The following object is masked from &#39;package:graphics&#39;:
-## 
-##     layout</code></pre>
-<pre class="r"><code>library(ggplot2)</code></pre>
+<pre class="r"><code>library(p8105.datasets)
+library(ggplot2)</code></pre>
 <div id="instacart" class="section level3">
 <h3>Instacart</h3>
+<pre class="r"><code>data(&quot;instacart&quot;)</code></pre>
 <p>(plot)</p>
 </div>
 <div id="ny-noaa" class="section level3">
 <h3>NY NOAA</h3>
+<pre class="r"><code>data(&quot;ny_noaa&quot;)</code></pre>
 <p>(plot)</p>
 </div>
 <div id="nyc-restaurant-inspections" class="section level3">
 <h3>NYC Restaurant Inspections</h3>
+<pre class="r"><code>data(&quot;nyc_airbnb&quot;)</code></pre>
 <p>(plot)</p>
 </div>
 </div>
