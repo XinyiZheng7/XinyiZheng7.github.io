@@ -22,7 +22,7 @@ Yet dreams of splendor past, behind you lay.
 
 ![](image/yyye.png)
 
-# Here's three plots
+# Here are three plots
 ## First, load necessary packages:
 ```{r}
 library(p8105.datasets)
