@@ -8,7 +8,7 @@ output:
     toc_float: true
     theme: cosmo
 ---
-# introduction
+# Introduction
 Hello, I am Xinyi. This is my first website. 
 My UNI is xz3298. 
 
