@@ -8,10 +8,9 @@ output:
     toc_float: true
     theme: cosmo
 ---
-
+# Some necessary text
 Hello, I am Xinyi. This is my first website. I don’t know what to say, but they told me to leave some text here, so I leave a poem:
 
-# This is a poem written by Xinyi:
 
 My steadfast lover, true, with no regret's sound,
 
@@ -33,7 +32,9 @@ library(ggplot2)
 ### Instacart
 ```{r}
 data("instacart")
+
 ```
+
 
 (plot)
 
@@ -52,7 +53,6 @@ data("nyc_airbnb")
 ```
 
 (plot)
-
 
 ## Link to page within the site, which tells my academic and professional experience
 
