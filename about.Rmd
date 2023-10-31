@@ -7,6 +7,22 @@ output:
     theme: cosmo
 ---
 
-# This is Xinyi's another page
+# About me
+My name is Xinyi Zheng, I come from Nanjing in China. I love composing and writing. 
+
+My email is xz3298@cumc.columbia.edu
+
+Below is my brief introduction, including my academic experience and professional experience.
 
 ![](image/rev.png)
+
+## Introduction{.tabset}
+
+### Academic experience
+
+I get my bachelor degree in Hohai University in China. I used to learn Marine Science before my sophomore year, then switch to Environmental Engineering.
+
+### Professional experience
+
+I do not have actual work experience. But I am a music producer and a composer. I also write novels and poems.
+

@@ -1,5 +1,5 @@
 ---
-title: "Xinyi's first website"
+title: "My first website"
 author: "xinyi zheng"
 date: "2023-10-30"
 output: 
@@ -9,18 +9,35 @@ output:
     theme: cosmo
 ---
 
-I try to add some text here
+Hello, I am Xinyi. This is my first website. I don’t know what to say, but they told me to leave some text here, so I leave a poem:
 
-# This is Xinyi's first website
+# This is a poem written by Xinyi:
 
-![](https://cdn.britannica.com/92/6792-004-C757C6D7/The-Birth-of-Venus-canvas-Sandro-Botticelli.jpg)
+My steadfast lover, true, with no regret's sound,
 
-## Here's a subsection
-And here's some additional text...
+Hear my whisper soft as your eyes lead the way—
 
-```{r}
-rnorm(10)
-```
+Ahead, dark thorns and mires do abound,
+
+Yet dreams of splendor past, behind you lay.
+
+![](image/yyye.png)
+
+## Here's three plots: Instacart, NY NOAA, NYC Restaurant Inspections{.tabsets}
+click on the tab to see details
+
+### Instacart
+
+(plot)
+
+### NY NOAA
+
+(plot)
+
+### NYC Restaurant Inspections
+
+(plot)
+
 
 ## Links to other websites
 
@@ -29,14 +46,12 @@ Let's link to useful tools for data science:
 * [Google](https://www.google.com/)
 * [P8105](https://p8105.com)
 
-## Local image
+## Link to page within the site, which tells my academic and professional experience
 
-Here's my favorite anime character: jack and glen
+[another page](about.html)
 
-![](image/yyye.png)
 
-## Link to page within the site
 
-[another page](index.html)
+
 
 
