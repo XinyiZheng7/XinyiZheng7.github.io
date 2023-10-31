@@ -22,37 +22,54 @@ Yet dreams of splendor past, behind you lay.
 
 ![](image/yyye.png)
 
-## Here's three plots: Instacart, NY NOAA, NYC Restaurant Inspections{.tabsets}
-click on the tab to see details
+## Here's three plots
+### First, load necessary packages:
 ```{r}
 library(p8105.datasets)
+library(flexdashboard)
 library(ggplot2)
+library(plotly)
+library(dplyr)
+library(tidyverse)
 ```
-
-### Instacart
+## Importing and cleaning the dataset:
 ```{r}
-data("instacart")
-
+data(nyc_airbnb)
+nyc_airbnb = 
+  nyc_airbnb |> 
+  mutate(rating = review_scores_location / 2) |>
+  select(
+    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) |>
+  filter(
+    !is.na(rating), 
+    neighbourhood_group == "Manhattan",
+    room_type == "Entire home/apt",
+    price %in% 100:500)
 ```
 
-
-(plot)
-
-### NY NOAA
-
+### Scatter Plot
 ```{r}
-data("ny_noaa")
+nyc_airbnb |>
+  mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
+  plot_ly(
+    x = ~lat, y = ~long, type = "scatter", mode = "markers",
+    color = ~price, text = ~text_label, alpha = 0.5)
 ```
 
-(plot)
-
-### NYC Restaurant Inspections
-
+### Boxplot
 ```{r}
-data("nyc_airbnb")
+nyc_airbnb |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
 ```
 
-(plot)
+### Bar Chart
+```{r}
+nyc_airbnb |> 
+  count(neighbourhood) |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
+  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+```
 
 ## Link to page within the site, which tells my academic and professional experience
 
