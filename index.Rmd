@@ -54,15 +54,15 @@ ny_noaa_subset <- ny_noaa %>%
 
 ```
 
-## Scatter Plot (Date and Snowfall)
+## Scatter Plot (Precipitation per day in 2010)
 ```{r}
 plot_ly(ny_noaa_subset, x = ~date, y = ~prcp, type = "scatter", mode = "markers") %>%
-  layout(title = "Date vs. Snowfall in 2010",
+  layout(title = "Date vs. Precipitation in 2010",
          xaxis = list(title = "Date"),
          yaxis = list(title = "Prcp"))
 ```
 
-## Barchart (Date and Precipitation)
+## Pie Chart(Total precipitation per year)
 ```{r}
 agg_data <- aggregate(ny_noaa$prcp ~ format(ny_noaa$date, "%Y"), FUN=sum)
 
@@ -70,7 +70,7 @@ plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y
   layout(title = 'Total Precipitation per Year')
 ```
 
-## Bar Chart (tmax and tmin)
+## Bar Chart(Snow amount in 2010 per location)
 ```{r}
 plot_ly(data = ny_noaa_subset, x = ~id, y = ~snow, type = 'bar', colors = 'viridis') %>%
   layout(title = "Snow amount in 2010 per location", xaxis = list(title = "location"), yaxis = list(title = "Snow amount"))
