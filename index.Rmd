@@ -41,11 +41,9 @@ Yet dreams of splendor past, behind you lay.
 ```{r}
 library(p8105.datasets)
 library(flexdashboard)
-library(ggplot2)
 library(plotly)
 library(dplyr)
 library(tidyverse)
-library(rnoaa)
 ```
 ## Importing and cleaning the dataset:
 ```{r}
