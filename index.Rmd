@@ -18,14 +18,20 @@ My github account is [XinyiZheng7](https://github.com/XinyiZheng7)
 
 I major in [Environmental Health Data Science](https://www.publichealth.columbia.edu/academics/degrees/master-science/environmental-health-data-science)
 
-Also, I give a brief introduction of my academic and professional experience in the below 
+Also, I give a brief introduction of my academic and professional experience below : 
 
 # My academic and professional experience
 
-* [About me](about.html)
+* [My resume](about.html)
+
+# Here are three plots
+
+* [Scatterplot, Piechart and Barchart](dashboard.html)
 
 
-I don’t know what to say, but I need to leave some text and pictures here, so I leave a poem and a fantastic picture:
+# Some additional text and pictures
+
+I don’t know what to say, but I need to leave some text and pictures here, so I leave a poem written by me and some fantastic pictures my friends painted for me:
 
 
 My steadfast lover, true, with no regret's sound,
@@ -36,44 +42,8 @@ Ahead, dark thorns and mires do abound,
 
 Yet dreams of splendor past, behind you lay.
 
-![](image/yyye.png)
+![My favorite anime characters](image/yyye.png)
+![My avatar](image/erica.jpg)
 
-# Here are three plots
-## First, load necessary packages:
-```{r}
-library(p8105.datasets)
-library(flexdashboard)
-library(plotly)
-library(dplyr)
-library(tidyverse)
-```
-## Importing and cleaning the dataset:
-```{r}
-data(ny_noaa)
+Thanks for visiting my website!
 
-ny_noaa_subset <- ny_noaa %>%
-  filter(!is.na(prcp), !is.na(snow), !is.na(tmax), !is.na(tmin),date>="2010-01-01")
-
-```
-
-## Scatter Plot (Precipitation per day in 2010)
-```{r}
-plot_ly(ny_noaa_subset, x = ~date, y = ~prcp, type = "scatter", mode = "markers") %>%
-  layout(title = "Date vs. Precipitation in 2010",
-         xaxis = list(title = "Date"),
-         yaxis = list(title = "Prcp"))
-```
-
-## Pie Chart(Total precipitation per year)
-```{r}
-agg_data <- aggregate(ny_noaa$prcp ~ format(ny_noaa$date, "%Y"), FUN=sum)
-
-plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y"), values = ~ny_noaa$prcp, type = 'pie') %>%
-  layout(title = 'Total Precipitation per Year')
-```
-
-## Bar Chart(Snow amount in 2010 per location)
-```{r}
-plot_ly(data = ny_noaa_subset, x = ~id, y = ~snow, type = 'bar', colors = 'viridis') %>%
-  layout(title = "Snow amount in 2010 per location", xaxis = list(title = "location"), yaxis = list(title = "Snow amount"))
-```

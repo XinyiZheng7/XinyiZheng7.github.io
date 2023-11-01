@@ -1,0 +1,45 @@
+---
+title: "Flexdashboard: NY_NOAA"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+## First, load necessary packages:
+```{r}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+```
+
+## Importing and cleaning the dataset:
+```{r}
+data(ny_noaa)
+
+ny_noaa_subset <- ny_noaa %>%
+  filter(!is.na(prcp), !is.na(snow), !is.na(tmax), !is.na(tmin),date>="2010-01-01")
+
+```
+
+## Scatter Plot (Precipitation per day in 2010)
+```{r}
+plot_ly(ny_noaa_subset, x = ~date, y = ~prcp, type = "scatter", mode = "markers") %>%
+  layout(title = "Date vs. Precipitation in 2010",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Prcp"))
+```
+
+## Pie Chart(Total precipitation per year)
+```{r}
+agg_data <- aggregate(ny_noaa$prcp ~ format(ny_noaa$date, "%Y"), FUN=sum)
+
+plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y"), values = ~ny_noaa$prcp, type = 'pie') %>%
+  layout(title = 'Total Precipitation per Year')
+```
+
+## Bar Chart(Snow amount in 2010 per location)
+```{r}
+plot_ly(data = ny_noaa_subset, x = ~id, y = ~snow, type = 'bar', colors = 'viridis') %>%
+  layout(title = "Snow amount in 2010 per location", xaxis = list(title = "location"), yaxis = list(title = "Snow amount"))
+```
