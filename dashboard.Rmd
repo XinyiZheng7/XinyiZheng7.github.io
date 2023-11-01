@@ -21,7 +21,7 @@ ny_noaa_subset <- ny_noaa %>%
 
 ```
 
-Column {data-width=650}
+Column {data-width=550}
 -----------------------------------------------------------------------
 
 ### Scatter Plot (Precipitation per day in 2010)
@@ -32,7 +32,7 @@ plot_ly(ny_noaa_subset, x = ~date, y = ~prcp, type = "scatter", mode = "markers"
          yaxis = list(title = "Prcp"))
 ```
 
-Column {data-width=350}
+Column {data-width=450}
 -----------------------------------------------------------------------
 
 ### Pie Chart(Total precipitation per year)
