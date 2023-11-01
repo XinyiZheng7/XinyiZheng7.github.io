@@ -49,25 +49,22 @@ library(tidyverse)
 ```{r}
 data(ny_noaa)
 
-set.seed(123) # I randomly choose 1000 lines because the dataset is too large
-ny_noaa_sample <- ny_noaa %>%
-  sample_n(1000) %>%
-  filter(!is.na(prcp), !is.na(snow), !is.na(tmax), !is.na(tmin))
+ny_noaa_subset <- ny_noaa %>%
+  filter(!is.na(prcp), !is.na(snow), !is.na(tmax), !is.na(tmin),date>="2010-01-01")
+
 ```
 
 ## Scatter Plot (Date and Snowfall)
 ```{r}
-ny_noaa_sample$date <- as.Date(ny_noaa_sample$date, format = "%Y-%m-%d")
-
-plot_ly(ny_noaa_sample, x = ~date, y = ~snow, type = "scatter", mode = "markers") %>%
-  layout(title = "Date vs. Snowfall",
+plot_ly(ny_noaa_subset, x = ~date, y = ~prcp, type = "scatter", mode = "markers") %>%
+  layout(title = "Date vs. Snowfall in 2010",
          xaxis = list(title = "Date"),
-         yaxis = list(title = "Snowfall (snow)"))
+         yaxis = list(title = "Prcp"))
 ```
 
 ## Barchart (Date and Precipitation)
 ```{r}
-agg_data <- aggregate(ny_noaa_sample$prcp ~ format(as.Date(ny_noaa_sample$date, format="%Y-%m-%d"), "%Y"), FUN=sum)
+agg_data <- aggregate(ny_noaa$prcp ~ format(ny_noaa$date, "%Y"), FUN=sum)
 
 plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y"), values = ~ny_noaa$prcp, type = 'pie') %>%
   layout(title = 'Total Precipitation per Year')
@@ -75,16 +72,6 @@ plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y
 
 ## Bar Chart (tmax and tmin)
 ```{r}
-plot_ly(data = ny_noaa_sample, x = ~tmax, y = ~tmin, type = 'bar', colors = 'viridis') %>%
-  layout(title = "Bar Chart of Dates", xaxis = list(title = "tmax"), yaxis = list(title = "Count"))
+plot_ly(data = ny_noaa_subset, x = ~id, y = ~snow, type = 'bar', colors = 'viridis') %>%
+  layout(title = "Snow amount in 2010 per location", xaxis = list(title = "location"), yaxis = list(title = "Snow amount"))
 ```
-
-
-
-
-
-
-
-
-
-
