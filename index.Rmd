@@ -25,7 +25,7 @@ Also, I give a brief introduction of my academic and professional experience in 
 * [About me](about.html)
 
 
-I don’t know what to say first, but I need to leave some text and pictures here, so I leave a poem:
+I don’t know what to say, but I need to leave some text and pictures here, so I leave a poem and a fantastic picture:
 
 
 My steadfast lover, true, with no regret's sound,
@@ -35,6 +35,8 @@ Hear my whisper soft as your eyes lead the way—
 Ahead, dark thorns and mires do abound,
 
 Yet dreams of splendor past, behind you lay.
+
+![](image/yyye.png)
 
 # Here are three plots
 ## First, load necessary packages:
