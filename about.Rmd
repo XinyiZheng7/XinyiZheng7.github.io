@@ -7,10 +7,9 @@ output:
     theme: cosmo
 ---
 
-# Brief introduction of me
-My name is Xinyi Zheng, I come from Nanjing in China. I love composing and writing. 
+Hello. My name is Xinyi Zheng, I come from Nanjing, China. I love composing and writing. 
 
-My email is xz3298@cumc.columbia.edu
+My email: xz3298@cumc.columbia.edu
 
 Here is my brief introduction, including my academic experience and professional experience.
 
