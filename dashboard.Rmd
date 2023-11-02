@@ -46,8 +46,6 @@ plot_ly(agg_data, labels = ~format(as.Date(ny_noaa$date, format="%Y-%m-%d"), "%Y
   layout(title = 'Total Precipitation per Year')
 ```
 
-
-
 ### Bar Chart(Snow amount in 2010 per location)
 
 ```{r}
