@@ -25,7 +25,9 @@ I get my bachelor degree in [Hohai University](https://www.hhu.edu.cn) in China.
 
 Led a project on the impact of noise pollution on sleep quality in surrounding residential areas.
 
+
 Applied environmental sampling, data collection, and statistical methods to assess noise levels and their effects.
+
 
 Debate Team President
 
@@ -33,15 +35,22 @@ Debate Team President
 ·Skills
 
 Data Analysis and Interpretation
+
 Environmental Health Research
+
 Statistical Software (e.g., R, C)
+
 Project Management
+
 Leadership and Team Collaboration
+
 
 ·Languages
 
 Japanese
+
 English 
+
 Mandarin (Native)
 
 ### Professional experience
